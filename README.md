@@ -10,7 +10,7 @@ pip install py3_requests
 
 # Official Documentation
 
-# [Document](https://requests.readthedocs.io/en/latest/)
+# [Requests Document](https://requests.readthedocs.io/en/latest/)
 
 # Example
 
