@@ -15,27 +15,31 @@ pip install py3_requests
 # Example
 
 ```python
-import requests
 import py3_requests
-
-# normal usages
-response = py3_requests.request(
-    method='GET',
-    url='https://www.baidu.com',
-)
+from requests import Response
 
 
-def response_handler(response: requests.Response = None):
-    """
-    your business code
-    """
-    pass
+# response handler 
+def normal_response_handler(response: Response):
+    if isinstance(response, Response) and response.status_code == 200:
+        return response.text
+    return None
 
 
-# customer usages
+# response handler usage 
 result = py3_requests.request(
-    response_handler=response_handler,
-    method='GET',
-    url='https://www.baidu.com',
+    response_handler=normal_response_handler,
+    url="https://www.baidu.com",
+    method="GET"
 )
+# result is normal_response_handler return value
+print(result)
+
+# not response handler usage return requests.Response instance
+response = py3_requests.request(
+    url="https://www.baidu.com",
+    method="GET"
+)
+# response is requests.Response instance
+print(response)
 ```

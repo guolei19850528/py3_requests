@@ -11,19 +11,22 @@ Github：https://github.com/guolei19850528/py3_requests
 from typing import Callable
 
 import requests
+from addict import Dict
+from requests import Response
 
 
 def request(response_handler: Callable = None, *args, **kwargs):
     """
-    call requests.request
+    requests request function extension
 
-    @see https://requests.readthedocs.io/en/latest/
-    :param response_handler: response_handler(response)
+    @see requests document https://requests.readthedocs.io/en/latest/
+    :param response_handler: response handler function
     :param args: requests.request args
     :param kwargs: requests.request kwargs
     :return: response_handler(response) if isinstance(response_handler, Callable) else response
     """
-    response = requests.request(*args, **kwargs)
+    kwargs = Dict(kwargs)
+    response: Response = requests.request(*args, **kwargs.to_dict())
     if isinstance(response_handler, Callable):
         return response_handler(response)
     return response
