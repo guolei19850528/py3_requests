@@ -1,6 +1,6 @@
 # py3_requests
 
-The Python3 Requests Library Developed By Guolei
+The Python3 Requests Package Developed By Guolei
 
 # Installation
 
@@ -8,7 +8,7 @@ The Python3 Requests Library Developed By Guolei
 pip install py3_requests
 ```
 
-# Official Documentation
+# Documentation
 
 # [Requests Document](https://requests.readthedocs.io/en/latest/)
 

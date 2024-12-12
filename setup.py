@@ -17,7 +17,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name="py3-requests",
-    version="1.0.2",
+    version="1.0.6",
     description="The Python3 Requests Library Developed By Guolei",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -29,6 +29,7 @@ setup(
     packages=setuptools.find_packages('./'),
     install_requires=[
         "requests",
+        "addict",
     ],
     python_requires='>=3.0',
     zip_safe=False
