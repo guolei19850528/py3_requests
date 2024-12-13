@@ -54,7 +54,7 @@ class ResponseHandler(object):
         :param beautifulsoup_kwargs: bs4.BeautifulSoup kwargs
         :return: bs4.BeautifulSoup instance if isinstance(text, str) and len(text) else None
         """
-        text = RequestHandler.status_code_200_text(response=response)
+        text = ResponseHandler.status_code_200_text(response=response)
         if isinstance(text, str) and len(text):
             return BeautifulSoup(text, **Dict(beautifulsoup_kwargs).to_dict())
         return None
@@ -79,7 +79,8 @@ class ResponseHandler(object):
         :param json_kwargs: response.json() kwargs
         :return:  addict.Dict(response.json()) if response.status_code==200 else addict.Dict()
         """
-        return Dict(RequestHandler.status_code_200_json(response=response, **json_kwargs))
+        json_addict = Dict(ResponseHandler.status_code_200_json(response=response, **json_kwargs))
+        return json_addict if isinstance(json_addict, (dict, Dict)) and json_addict.keys() else None
 
 
 def request(response_handler: Callable = None, *args, **kwargs):
