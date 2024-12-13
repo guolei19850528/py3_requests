@@ -5,7 +5,7 @@ The Python3 Requests Package Developed By Guolei
 # Installation
 
 ```shell
-pip install py3_requests==1.1.1
+pip install py3_requests==1.1.2
 ```
 
 # Documentation
@@ -20,7 +20,7 @@ from requests import Response
 
 # response handler usage 
 result = py3_requests.request(
-    response_handler=py3_requests.RequestHandler.status_code_200_text,
+    response_handler=py3_requests.ResponseHandler.status_code_200_text,
     url="https://www.baidu.com",
     method="GET"
 )

@@ -30,9 +30,9 @@ class ValidatorJsonSchema(object):
     pass
 
 
-class RequestHandler(object):
+class ResponseHandler(object):
     """
-    request handler class
+    response handler class
     """
 
     @staticmethod
