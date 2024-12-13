@@ -5,7 +5,7 @@ The Python3 Requests Package Developed By Guolei
 # Installation
 
 ```shell
-pip install py3_requests==1.1.0
+pip install py3_requests==1.1.1
 ```
 
 # Documentation
@@ -18,17 +18,9 @@ pip install py3_requests==1.1.0
 import py3_requests
 from requests import Response
 
-
-# response handler 
-def normal_response_handler(response: Response):
-    if isinstance(response, Response) and response.status_code == 200:
-        return response.text
-    return None
-
-
 # response handler usage 
 result = py3_requests.request(
-    response_handler=normal_response_handler,
+    response_handler=py3_requests.RequestHandler.status_code_200_text,
     url="https://www.baidu.com",
     method="GET"
 )
