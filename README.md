@@ -5,7 +5,7 @@ The Python3 Requests Package Developed By Guolei
 # Installation
 
 ```shell
-pip install py3_requests==1.1.2
+pip install py3_requests==1.1.4
 ```
 
 # Documentation
