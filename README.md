@@ -18,6 +18,8 @@ pip install py3_requests
 
 ## [xmltodict document](https://pypi.org/project/xmltodict/)
 
+## [jsonschema document](https://python-jsonschema.readthedocs.io/en/stable/)
+
 # Example
 
 ```python
