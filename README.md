@@ -10,7 +10,13 @@ pip install py3_requests
 
 # Documentation
 
-# [Requests Document](https://requests.readthedocs.io/en/latest/)
+## [requests](https://requests.readthedocs.io/en/latest/)
+
+## [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/)
+
+## [addict document](https://pypi.org/project/addict/)
+
+## [xmltodict document](https://pypi.org/project/xmltodict/)
 
 # Example
 

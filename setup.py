@@ -17,7 +17,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name="py3-requests",
-    version="1.1.5",
+    version="1.1.6",
     description="The Python3 Requests Library Developed By Guolei",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -30,6 +30,10 @@ setup(
     install_requires=[
         "requests",
         "addict",
+        "xmltodict",
+        "beautifulsoup4",
+        "lxml",
+        "html5lib"
     ],
     python_requires='>=3.0',
     zip_safe=False
