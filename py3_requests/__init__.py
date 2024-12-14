@@ -16,6 +16,19 @@ from bs4 import BeautifulSoup
 from requests import Response
 
 
+class RequestMethod(object):
+    """
+    request method class
+    """
+    GET = "GET"
+    OPTIONS = "OPTIONS"
+    HEAD = "HEAD"
+    POST = "POST"
+    PUT = "PUT"
+    PATCH = "PATCH"
+    DELETE = "DELETE"
+
+
 class RequestUrl(object):
     """
     request url class
