@@ -1,45 +1,74 @@
 # py3_requests
 
-The Python3 Requests Package Developed By Guolei
+#### 介绍
 
-# Installation
+针对requests库的封装
+
+#### 安装
 
 ```shell
 pip install py3_requests
 ```
 
-# Documentation
+#### 依赖库
 
-## [requests](https://requests.readthedocs.io/en/latest/)
+* ~python 3.0
+* [requests](https://pypi.org/project/requests/)
+* [addict](https://pypi.org/project/addict/)
+* [jsonschema](https://pypi.org/project/jsonschema/)
+* [retrying](https://pypi.org/project/retrying/)
+* [xmltodict](https://pypi.org/project/xmltodict/)
+* [beautifulsoup4](https://pypi.org/project/beautifulsoup4/)
+* [lxml](https://pypi.org/project/lxml/)
+* [html5lib](https://pypi.org/project/html5lib/)
 
-## [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/)
 
-## [addict document](https://pypi.org/project/addict/)
-
-## [xmltodict document](https://pypi.org/project/xmltodict/)
-
-## [jsonschema document](https://python-jsonschema.readthedocs.io/en/stable/)
-
-# Example
+#### 使用说明
 
 ```python
+import requests
 import py3_requests
-from requests import Response
 
-# response handler usage 
-result = py3_requests.request(
-    response_handler=py3_requests.ResponseHandler.status_code_200_text,
-    url="https://www.baidu.com",
-    method="GET"
-)
-# result is normal_response_handler return value
-print(result)
+# requests.request args
+args = ()
 
-# not response handler usage return requests.Response instance
+# requests.request kwargs
+kwargs = {}
+
+# response = py3_requests.ResponseHandler.status_code_200_json_addict(requests.Response)
 response = py3_requests.request(
-    url="https://www.baidu.com",
-    method="GET"
+    response_handler=py3_requests.ResponseHandler.status_code_200_json_addict,
+    *args,
+    **kwargs
 )
-# response is requests.Response instance
-print(response)
+
+
+# 定制使用
+class RequestUrl(py3_requests.RequestUrl):
+    """
+    your request url
+    """
+    pass
+
+
+class ValidatorJsonSchema(py3_requests.ValidatorJsonSchema):
+    """
+    your validator schema
+    """
+    pass
+
+
+class ResponseHandler(py3_requests.ResponseHandler):
+    """
+    your response handler
+    """
+    pass
+
+
+# your request
+response = py3_requests.request(
+    response_handler=ResponseHandler.status_code_200_json,
+    *args,
+    **kwargs
+)
 ```
