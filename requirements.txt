@@ -1,0 +1,10 @@
+requests
+addict
+jsonschema
+retrying
+xmltodict
+beautifulsoup4
+lxml
+html5lib
+setuptools
+wheel
